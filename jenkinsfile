@@ -8,7 +8,7 @@ node
     stage('Build') 
     { 
     
-        bat ("\"${tool 'msbuild15'}\" \"${WORKSPACE}\\BankingSite\\BankingSite.sln" /p:DeployOnBuild=true;Configuration=Release;OutputPath=bin\\Package")
+        bat ("\"${tool 'msbuild15'}\" \"${WORKSPACE}\\BankingSite\\BankingSite.sln" "/p:DeployOnBuild=true;Configuration=Release;OutputPath=bin\\Package")
     }
     stage('RunUnitTest')
     {
