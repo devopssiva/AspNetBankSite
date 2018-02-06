@@ -8,11 +8,12 @@ node
     stage('Build') 
     { 
     
-        bat ("\"${tool 'msbuild15'}\"${WORKSPACE}""\\BankingSite\\BankingSite.sln /p:DeployOnBuild=true;Configuration=Release;OutputPath=bin\\Package")
+        bat ("\"${tool 'msbuild15'}\"${WORKSPACE}"
+"\\BankingSite\\BankingSite.sln /p:DeployOnBuild=true;Configuration=Release;OutputPath=bin\\Package")
     }
     stage('RunUnitTest')
     {
-        bat ('"C:\\Program Files (x86)\\NUnit.org\\nunit-console\\nunit3-console.exe" "${WORKSPACE}""\\BankingSite\\BankingSite.UnitTests\\bin\\Package\\BankingSite.UnitTests.dll"')
+        bat ('"C:\\Program Files (x86)\\NUnit.org\\nunit-console\\nunit3-console.exe" "${WORKSPACE}" "\\BankingSite\\BankingSite.UnitTests\\bin\\Package\\BankingSite.UnitTests.dll"')
     }
         
 }
